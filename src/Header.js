@@ -1,4 +1,3 @@
-import { render } from "react-dom";
 
 
 function Header() {
