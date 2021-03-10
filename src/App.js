@@ -6,7 +6,7 @@ import Main from "./Main"
 import UserId from "./UserId"
 import Error from "./Error"
 
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom"
 
 
 function App() {
@@ -14,6 +14,11 @@ function App() {
     <>
       <Header />
       <Router>
+        <nav>
+          <li><NavLink to="/">Main</NavLink></li>
+          <li><NavLink to="/about">About</NavLink></li>
+          <li><NavLink to="/users">Users</NavLink></li>
+        </nav>
         <Switch>
           <Route exact path="/" component={Main} />
           <Route path="/about" component={About} />
