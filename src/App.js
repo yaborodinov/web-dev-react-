@@ -1,33 +1,49 @@
 import './App.css';
-import Header from "./Header.js"
-import About from "./About"
-import Users from "./Users"
-import Main from "./Main"
-import UserId from "./UserId"
-import Error from "./Error"
-
-import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom"
-
+import React from "react";
+import {useState} from "react"  // стейт через хуки
 
 function App() {
+
+  let textInput = React.createRef()
+  let textOut = React.createRef()
+
+
+  const [output, setOutput] = useState("hello") // хук, метод, внутри usestate можно ввести значение по умолчанию, нам пример Hello
+
+
+  function f1(arg) {
+    console.log("f1 works" + arg)
+  }
+
+  function showInput(e) {
+    // console.log( e.target.value)
+    // console.log(textInput.current.value)
+    // textOut.current.innerHTML = textInput.current.value
+    setOutput(textInput.current.value)      //используем метод setOutput
+  }
+  
   return (
     <>
-      <Header />
-      <Router>
-        <nav>
-          <li><NavLink to="/">Main</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-          <li><NavLink to="/users">Users</NavLink></li>
-        </nav>
-        <Switch>
-          <Route exact path="/" component={Main} />
-          <Route path="/about" component={About} />
-          <Route exact path="/users" component={Users} />
-          <Route path="/users/:userName" component={UserId} />
-          <Route component={Error}/>
-        </Switch>
-      </Router>
+      <h1> События</h1>
+      section
+      <section>
+        <h2>button</h2>
+        <button onClick={()=>f1(" first")}>push</button>
+      </section>
 
+      <section>
+        <h2>duble click + mouse move</h2>
+        <div className="test" onDoubleClick={()=>f1(" second")} >
+
+        </div>
+      </section>
+      <section>
+        <h3>input</h3>
+        <input type="text" onInput={showInput} ref={textInput} defaultValue="hi" />
+        <p ref={textOut}></p>
+        <h4>{output}</h4> {/* в h4 укакзано значение из стейт */}
+        
+      </section>
     </>
   );
 }
