@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import Test1 from "./Test1"
+import Test2 from "./Test2"
 
 
 function App() {
@@ -9,8 +9,9 @@ function App() {
   
   return (
     <>
-      <Test1 argu={12}/>
-    </>
+      <Test2 argu={12} />
+          
+        </>
   );
 }
 
