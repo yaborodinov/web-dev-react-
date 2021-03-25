@@ -1,7 +1,7 @@
 import './App.css';
 import React from "react";
-import Component1 from "./Component1"
-import Component2 from "./Component2"
+import Test1 from "./Test1"
+
 
 function App() {
 
@@ -9,9 +9,7 @@ function App() {
   
   return (
     <>
-      <Component1 />
-      <br/>
-      <Component2/>
+      <Test1 argu={12}/>
     </>
   );
 }
