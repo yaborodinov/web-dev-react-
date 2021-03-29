@@ -1,0 +1,10 @@
+#root {
+  max-width: 1000px;
+  margin: 50px auto;
+  background: rgba(255, 127, 80, 0.459);
+  padding: 20px 40px;
+}
+
+h1{
+  text-align: center;
+}
